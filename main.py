@@ -34,11 +34,49 @@ def line():
         count += 1
 
 def random1():
-    print('')
-
+    space = ' '
+    count_1 = 0
+    spaces = 5
+    spaces2 = 0
+    line = '_'
+    star = '*'
+    print(space * 6, '@')
+    while count_1 < 3:
+        print(f'{space * spaces} /{space * spaces2} \ ')
+        count_1 += 1
+        spaces -= 1
+        spaces2 += 2
+    print(f'{space * 2} /{line * 7}\ ')
+    print(f'{space * 1} |{line*9}| ')
+    print(space * 2, '|  ===  |')
+    print(space * 1, '(|  0 0  |)')
+    print(space * 2, '|   U   |')
+    print(space * 2, '\*\___/*/')
+    print(f'{space * 4}\{star*2} {star*2}/')
+    print(f'{space*5}\{star*3}/')
+    print(f'{space*7}*')
 
 def random2():
-    print('')
+    space = ' '
+    count = 0
+    star = '*'
+    spaces = 5
+    spaces2 = 9
+    lines = '_'
+    print(f'{space * 10}*')
+    print(f'{space * 9}***')
+    print(f'{space * 7}/{star * 5}\ ')
+    print(f'{space *6}/* * * *\ ')
+    while count < 2:
+        print(f'{space * spaces}/{star * spaces2}\ ')
+        count += 1
+        spaces -= 1
+        spaces2 += 2
+    print(f'{space*3}/* * * * * * *\ ')
+    print(f'{space * 2}/{lines*15}\ ')
+    print(f'{space * 4}{star * 3} |  | {star * 3}')
+
+
 
 
 def random3():
@@ -63,15 +101,21 @@ def exit_game():
 
 
 def main():
-    print('This program allows users to select patterns that will be displayed.')
+    print('-'* 70)
+    print('This program allows users to select patterns to display!')
+    print('-'* 70)
     choice = menu()
     while choice != 'E':
         if choice == 'C':
+            print('You chose circle')
             circle()
         elif choice == 'L':
+            print('You chose line')
             line()
         elif choice == 'R':
+            print('You chose random')
             random_choice()
+        choice = menu()
     exit_game()
 
 main()
