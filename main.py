@@ -1,7 +1,17 @@
-# Code goes here and DO NOT FORGET INTRO COMMENTS
+# Programmers:  Caitlin Burns
+  # Course:  CS151, Professor Zee
+  # Due Date: 11/7
+  # Programming Assignment:  PA3
+  # Problem Statement:  displays a list of designs from users to choose from and displays the correlating design
+  # Data In: design choice, character choice, length of lines, amount of lines
+  # Data Out:  designs
+  # Credits: this is based on the read me file and the designs are ones I made
 import random
 
 
+# Purpose: displays a menu for the user to choose from
+# Parameters:none
+# Return: choice
 def menu():
     choice = input('Select an option:\n \tC- circle\n \tL-line\n \tR-random\n \tE-exit\n \t Type selection here:')
     choice = choice.upper()
@@ -11,11 +21,16 @@ def menu():
     return choice
 
 
-
+# Purpose: displays circle design
+# Parameters:none
+# Return: none
 def circle():
     print('   -----   \n /       \ \n \       /\n   -----  ')
 
 
+# Purpose: displays line design and asks questions to display line
+# Parameters:none
+# Return: none
 def line():
     character = input('What character would you like to make up the line?: ')
     char_amt = (input('How many characters would you like?: '))
@@ -33,6 +48,10 @@ def line():
         print(character * char_amt)
         count += 1
 
+
+# Purpose: displays first random design
+# Parameters:none
+# Return: none
 def random1():
     space = ' '
     count_1 = 0
@@ -56,6 +75,10 @@ def random1():
     print(f'{space*5}\{star*3}/')
     print(f'{space*7}*')
 
+
+# Purpose: displays second random design
+# Parameters:none
+# Return: none
 def random2():
     space = ' '
     count = 0
@@ -78,12 +101,33 @@ def random2():
 
 
 
-
+# Purpose: displays third random design
+# Parameters:none
+# Return: none
 def random3():
-    print('')
+    space = ' '
+    lines = '_'
+    count = 0
+    spaces = 20
+    spaces2 = 6
+    print(f'{space * 22}{lines*7}')
+    while count < 2:
+        print(f'{space * spaces}//{space * spaces2} \ ')
+        count += 1
+        spaces -= 1
+        spaces2 += 2
+    print(f'{space*7}{lines*11}//  {lines * 7}  \ {lines*15}')
+    print(f'{space*6}|=| {space *8} || {space*6} ==|{space*15}|')
+    print(f'{space*6}| {space *4}{lines*3}{space*4}|| {space*8} |{space*6}{lines*3}{space*6}|')
+    print(f'{space*6}|{lines*3}/ ___ \{lines*19}/ ___ \{lines*4}| ')
+    print(f'{space*10}/{space*5}\ {space*18}/{space*5}\ ')
+    print(f'{space*10}\{5* lines}/{space*19}\{lines*5}/ ')
 
 
 
+# Purpose: chooses between the three random designs when user selects random
+# Parameters: none
+# Return: none
 def random_choice():
     num = random.randint(1,3)
     if num == 1:
@@ -94,12 +138,16 @@ def random_choice():
         random3()
 
 
-
+# Purpose: allows user to exit game
+# Parameters:none
+# Return: none
 def exit_game():
     print('Thanks for playing!')
 
 
-
+# Purpose: runs main program
+# Parameters: none
+# Return: none
 def main():
     print('-'* 70)
     print('This program allows users to select patterns to display!')
